@@ -1,4 +1,4 @@
-const CACHE = 'othello-Amwq3Vw5GPayF0nN+yliTQ==';
+const CACHE = 'othello-JkJd2kC40qh9mMGieWFgTQ==';
 const ASSETS = [
   './',
   './index.html',
