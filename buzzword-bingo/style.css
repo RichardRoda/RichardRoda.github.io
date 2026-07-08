@@ -105,7 +105,7 @@ html, body {
   justify-content: center;
   text-align: center;
   padding: 4px;
-  font-size: clamp(0.55rem, 2.2vw, 0.85rem);
+  font-size: clamp(0.75rem, 3vw, 1rem);
   font-weight: 600;
   line-height: 1.2;
   word-break: break-word;
@@ -122,7 +122,7 @@ html, body {
 .cell.free {
   background: var(--free-bg);
   cursor: default;
-  font-size: clamp(0.7rem, 2.5vw, 1rem);
+  font-size: clamp(0.85rem, 3.2vw, 1.1rem);
 }
 
 .cell.marked::after {
