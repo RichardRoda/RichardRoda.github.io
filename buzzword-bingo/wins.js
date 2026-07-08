@@ -34,13 +34,6 @@ export function formatWinLine(lineIdx, board25) {
 }
 
 export function buildShareText(completedLineIndices, board25) {
-  const seen = new Set();
-  const words = [];
-  for (const lineIdx of completedLineIndices) {
-    for (const pos of WIN_LINES[lineIdx]) {
-      const word = board25[pos] === null ? '⭐' : board25[pos];
-      if (!seen.has(word)) { seen.add(word); words.push(word); }
-    }
-  }
-  return `Got Buzzword Bingo! 🎉 ${words.join(' · ')}`;
+  const lines = completedLineIndices.map(i => formatWinLine(i, board25));
+  return `Buzzword Bingo! 🎉\n${lines.join('\n')}`;
 }
