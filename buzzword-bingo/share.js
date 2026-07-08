@@ -5,21 +5,6 @@ export function buildWinningUrl(board25, mask) {
   return `${location.origin}${location.pathname}#${hash}`;
 }
 
-export function shareToX(text, url) {
-  const p = new URLSearchParams({ text, url });
-  window.open(`https://x.com/intent/tweet?${p}`, '_blank', 'noopener');
-}
-
-export function shareToLinkedIn(url) {
-  const p = new URLSearchParams({ url });
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?${p}`, '_blank', 'noopener');
-}
-
-export function shareToFacebook(text, url) {
-  const p = new URLSearchParams({ u: url, quote: text });
-  window.open(`https://www.facebook.com/sharer/sharer.php?${p}`, '_blank', 'noopener');
-}
-
 export async function copyShareText(text, url, btnEl) {
   const combined = `${text}\n\nTo see the board:\n${url}`;
   try {

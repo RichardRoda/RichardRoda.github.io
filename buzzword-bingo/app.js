@@ -2,7 +2,7 @@ import { parseHash, buildHash } from './url.js';
 import { buildBoard } from './board.js';
 import { WIN_LINES, checkWins, getNewWins, buildShareText } from './wins.js';
 import { renderGrid, updateCell, highlightWinLine, renderBanner, showBanner, hideBanner } from './render.js';
-import { buildWinningUrl, shareToX, shareToLinkedIn, shareToFacebook, copyLink, copyShareText } from './share.js';
+import { buildWinningUrl, copyLink, copyShareText } from './share.js';
 
 const boardContainer  = document.getElementById('board-container');
 const bannerContainer = document.getElementById('banner-container');
@@ -92,13 +92,6 @@ function showWinBanner() {
   const bannerEl = renderBanner(activeLines, board25);
   bannerContainer.appendChild(bannerEl);
 
-  // Wire share buttons
-  bannerEl.querySelector('[data-platform="X"]').addEventListener('click', () =>
-    shareToX(shareText, winningUrl));
-  bannerEl.querySelector('[data-platform="LinkedIn"]').addEventListener('click', () =>
-    shareToLinkedIn(winningUrl));
-  bannerEl.querySelector('[data-platform="Facebook"]').addEventListener('click', () =>
-    shareToFacebook(shareText, winningUrl));
   bannerEl.querySelector('.copy-text-btn').addEventListener('click', e =>
     copyShareText(shareText, winningUrl, e.currentTarget));
   bannerEl.querySelector('.copy-btn').addEventListener('click', e =>

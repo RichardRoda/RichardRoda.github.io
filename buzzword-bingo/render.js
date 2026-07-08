@@ -59,14 +59,6 @@ export function renderBanner(completedLineIndices, board25) {
   const shareGroup = document.createElement('div');
   shareGroup.className = 'share-group';
 
-  for (const platform of ['X', 'LinkedIn', 'Facebook']) {
-    const btn = document.createElement('button');
-    btn.className = 'share-btn';
-    btn.dataset.platform = platform;
-    btn.textContent = platform === 'X' ? '𝕏 (Twitter)' : platform;
-    shareGroup.appendChild(btn);
-  }
-
   const copyTextBtn = document.createElement('button');
   copyTextBtn.className = 'copy-text-btn';
   copyTextBtn.textContent = 'Copy for sharing';
