@@ -140,13 +140,13 @@ function init() {
     wonSet         = new Set();
     mountGrid(parsed.board25, parsed.mask);
 
-    // Silently restore already-won lines (replay — no banner on load)
     const alreadyWon = checkWins(parsed.mask);
     for (const lineIdx of alreadyWon) {
       completedLines.push(lineIdx);
       wonSet.add(lineIdx);
       highlightWinLine(gridEl, lineIdx);
     }
+    if (alreadyWon.length > 0) showWinBanner();
   } else {
     // No valid hash — fetch words and build fresh board
     fetchWords()
