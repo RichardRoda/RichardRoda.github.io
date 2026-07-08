@@ -92,6 +92,8 @@ function showWinBanner() {
   const bannerEl = renderBanner(activeLines, board25);
   bannerContainer.appendChild(bannerEl);
 
+  bannerEl.querySelector('.banner-close-btn').addEventListener('click', () =>
+    hideBanner(bannerEl));
   bannerEl.querySelector('.copy-text-btn').addEventListener('click', e =>
     copyShareText(shareText, winningUrl, e.currentTarget));
   bannerEl.querySelector('.copy-btn').addEventListener('click', e =>

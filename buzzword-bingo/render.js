@@ -45,6 +45,12 @@ export function renderBanner(completedLineIndices, board25) {
   const banner = document.createElement('div');
   banner.className = 'banner';
 
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'banner-close-btn';
+  closeBtn.setAttribute('aria-label', 'Dismiss');
+  closeBtn.textContent = '✕';
+  banner.appendChild(closeBtn);
+
   const h2 = document.createElement('h2');
   h2.textContent = 'Bingo! 🎉';
   banner.appendChild(h2);

@@ -137,6 +137,7 @@ html, body {
 }
 
 .banner {
+  position: relative;
   background: var(--banner-bg);
   color: var(--banner-text);
   border-radius: 16px 16px 0 0;
@@ -145,6 +146,21 @@ html, body {
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
   pointer-events: all;
 }
+
+.banner-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.banner-close-btn:hover { color: #fff; }
 
 .banner.visible { transform: translateY(0); }
 
