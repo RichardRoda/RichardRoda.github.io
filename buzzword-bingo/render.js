@@ -67,6 +67,11 @@ export function renderBanner(completedLineIndices, board25) {
     shareGroup.appendChild(btn);
   }
 
+  const copyTextBtn = document.createElement('button');
+  copyTextBtn.className = 'copy-text-btn';
+  copyTextBtn.textContent = 'Copy for sharing';
+  shareGroup.appendChild(copyTextBtn);
+
   const copyBtn = document.createElement('button');
   copyBtn.className = 'copy-btn';
   copyBtn.textContent = 'Copy link';
