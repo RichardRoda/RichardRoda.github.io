@@ -7,6 +7,7 @@ import { buildWinningUrl, copyLink, copyShareText } from './share.js';
 const boardContainer  = document.getElementById('board-container');
 const bannerContainer = document.getElementById('banner-container');
 const newGameBtn      = document.getElementById('new-game');
+const copyGameLinkBtn = document.getElementById('copy-game-link');
 
 let board25        = null;
 let mask           = 1 << 12;
@@ -156,4 +157,6 @@ function init() {
 }
 
 newGameBtn.addEventListener('click', startNewGame);
+copyGameLinkBtn.addEventListener('click', () =>
+  copyLink(location.origin + location.pathname, copyGameLinkBtn));
 init();
